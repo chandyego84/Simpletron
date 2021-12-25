@@ -1,0 +1,59 @@
+Test SML programs:
+1) Use sentinel-controlled loop to read positive numbers and compute and display
+their sum. Terminate input when a negative number is entered.
+00 +1008 Read first positive number to 08
+01 +2008 Load first positive number to accumulator
+02 +4111 Branch negative to 11
+03 +1009 Read subsequent positive numbers to 09
+04 +4111 Branch negative to 11
+05 +3009 Add positive number to accumulator
+06 +2110 Store accumulator to 10
+07 +4003 Branch (loop) to 03
+08 +0000 First Variable A
+09 +0000 Subsequrent Variable B
+10 +0000 Sum Variable C
+11 +1110 Display sum (10)
+12 +4300 Halt program
+
+2) Use a counter-controlled loop to read seven numbers, some positive and some negative, and compute
+and display their average.
+00 +1015 Read integer to 15
+01 +2016 Load the sum from 16 --> accumulator
+02 +3015 Add intger from 15 to accumulator
+03 +2116 Store the sum to 16
+04 +2013 Load current counter from 13 --> accumulator
+05 +3114 Decrement current counter (accumulator) by 1
+06 +4208 Branchzero to calculate division 
+07 +4000 Branch to read integer again (LOOP)
+08 +2012 Load initial counter (7) to accumulator
+09 +3216 Divide sum into accumulator (calculate average)
+10 +2117 Store the average to 17
+11 +1117 Display the average to screen
+12 +0007 Initial Counter Variable (7)
+13 +0007 Current Counter Variable (7) to be decremented
+14 +0001 Decrement Amount (1)
+15 +0000 Integer Variable
+16 +0000 Sum Variable
+17 +0000 Average Variable
+18 +4300 Halt program
+
+3) Read a series of numbers, and determine and display the largest number.
+The first number read indicates how many numbers should be processed.
+00 +1015 Read processing integer (counter)
+01 +1016 Read number to current number
+02 +2017 Load current largest number
+03 +3116 Subtract current number from current largest number
+04 +4106 Branch Negative
+05 +4009 Branch to check if counter == 0
+06 +2016 Load current number
+07 +2117 Store current number as new largest number
+08 +4009 Branch to check if counter == 0
+09 +2015 Load current counter 
+10 +4212 Branch zero; stop reading 
+11 +4001 Branch to read next number
+12 +2017 Load largest number
+13 +1117 Display largest number
+14 +4300 Halt program
+15 +0000 Counter Variable
+16 +0000 Number Variable
+17 +0000 Largest Number Variable
