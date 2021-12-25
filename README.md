@@ -1,7 +1,7 @@
-# Simpletron Machine Language
+# SIMP Machine Language
 
 A simple computer that runs programs written in the only language
-it directly understands: SML.
+it directly understands: SIMP Machine Language.
 
 **Accumulator**: "special register" in which information is put before the Simpletron uses that information
 in calculations or examines it in various ways. All information in Simpletron is handled in terms of _words_.
