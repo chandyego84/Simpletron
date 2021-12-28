@@ -6,7 +6,7 @@
 Variables:
 accumulator - accumulator register
 instructionCounter - tracks location in memory that contains instruction being performed
-operationCode - operation currently being performed ((left two digits of instruction)
+operationCode - operation currently being performed (left two digits of instruction)
 operand - memory location on which current instruction operates (rightmost two digits of instruction)
 instructionRegister - next instruction to be performed from memory
 
@@ -44,3 +44,18 @@ MEMORY:
 90 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
 */
 
+class Simp {
+public:
+	Simp();
+
+	int* getMemory();
+	
+
+private:
+	int memory[100];
+	int accumulator;
+	int instructionCounter;
+	int operationCode;
+	int operand;
+	int instructionRegister;
+};
