@@ -13,10 +13,6 @@ Simp::Simp() {
 	instructionRegister = 0;
 }
 
-int* Simp::getMemory() {
-	return memory;
-} 
-
 void Simp::displayStart() {
 	cout << "*** Welcome to Simpletron! ***" << endl << endl;
 	cout << "*** Please enter your program one instruction ***" << endl;
@@ -25,4 +21,36 @@ void Simp::displayStart() {
 	cout << "*** You then type the word for that location. ***" << endl;
 	cout << "*** Type the sentinel -99999 to stop entering ***" << endl;
 	cout << "*** your program. ***" << endl;
+}
+
+const int* Simp::getMemory() const{
+	return memory;
+} 
+
+const int& Simp::getCurrRegister() const {
+	return instructionRegister;
+}
+
+void Simp::promptUser(int& memloc, int& currRegister) {
+	cout << memloc << " ? ";
+	cin >> memory[memloc];
+	instructionRegister = memory[memloc];
+	memloc++;
+}
+
+void Simp::dataDump() {
+	cout << "Memory Dump: " << endl;
+	for (int i = 0; i < 100; i++) {
+		cout << i << " " << memory[i] << endl;
+	}
+}
+
+void Simp::runSystem() {
+	displayStart();
+
+	while (getCurrRegister() != -9999) {
+		promptUser(instructionCounter, instructionRegister);
+	}
+
+	dataDump();
 }

@@ -47,10 +47,15 @@ MEMORY:
 class Simp {
 public:
 	Simp();
-
-	int* getMemory();
-
 	void displayStart();
+
+	const int* getMemory() const;
+	const int& getCurrRegister() const;
+
+	void promptUser(int& memloc, int& currRegister);
+
+	void dataDump();
+	void runSystem();
 
 private:
 	int memory[100];
