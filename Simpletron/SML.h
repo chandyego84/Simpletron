@@ -49,7 +49,8 @@ public:
 	Simp();
 
 	int* getMemory();
-	
+
+	void displayStart();
 
 private:
 	int memory[100];

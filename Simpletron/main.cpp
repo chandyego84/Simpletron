@@ -3,6 +3,7 @@
 int main(int argc, char** argv) {
 	Simp SML;
 
+	SML.displayStart();
 
 	return 0;
 }

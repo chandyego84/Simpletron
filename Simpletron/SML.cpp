@@ -16,3 +16,13 @@ Simp::Simp() {
 int* Simp::getMemory() {
 	return memory;
 } 
+
+void Simp::displayStart() {
+	cout << "*** Welcome to Simpletron! ***" << endl << endl;
+	cout << "*** Please enter your program one instruction ***" << endl;
+	cout << "*** (or data word) at a time.I will type the ***" << endl;
+	cout << "*** location numberand a question mark(?). ***" << endl;
+	cout << "*** You then type the word for that location. ***" << endl;
+	cout << "*** Type the sentinel -99999 to stop entering ***" << endl;
+	cout << "*** your program. ***" << endl;
+}
