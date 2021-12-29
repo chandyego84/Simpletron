@@ -49,7 +49,7 @@ MEMORY:
 
 /*operation codes*/
 #define READ 10
-#define WRITR 11
+#define WRITE 11
 #define LOAD 20
 #define STORE 21
 #define ADD 30
@@ -69,7 +69,7 @@ public:
 	const int* getMemory() const;
 	const int& getCurrRegister() const;
 
-	void promptUser();
+	void promptUser(int &counter, int &input);
 	void executeProgram();
 
 	void dataDump();

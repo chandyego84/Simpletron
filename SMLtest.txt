@@ -1,19 +1,22 @@
 Test SML programs:
 1) Use sentinel-controlled loop to read positive numbers and compute and display
 their sum. Terminate input when a negative number is entered.
-00 +1008 Read first positive number to 08
-01 +2008 Load first positive number to accumulator
-02 +4111 Branch negative to 11
-03 +1009 Read subsequent positive numbers to 09
-04 +4111 Branch negative to 11
-05 +3009 Add positive number to accumulator
-06 +2110 Store accumulator to 10
-07 +4003 Branch (loop) to 03
-08 +0000 First Variable A
-09 +0000 Subsequrent Variable B
-10 +0000 Sum Variable C
-11 +1110 Display sum (10)
-12 +4300 Halt program
+00 +1011 Read first positive number to 11
+01 +2011 Load first positive number to accumulator
+02 +4114 Branch negative to 14
+03 +3013 Add sum number to accumulator
+04 +2113 Store accumulator to 13
+05 +1012 Read subsequent positive numbers to 12
+06 +2012 Load subsequent positive numbers to accumulator
+07 +4114 Branch negative to 14
+08 +3013 Add sum number to accumulator
+09 +2113 Store accumulator to 13
+10 +4005 Branch (loop) to 05
+11 +0000 First Variable A
+12 +0000 Subsequrent Variable B
+13 +0000 Sum Variable C
+14 +1113 Display sum (13)
+15 +4300 Halt program
 
 2) Use a counter-controlled loop to read seven numbers, some positive and some negative, and compute
 and display their average.
