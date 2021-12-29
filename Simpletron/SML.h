@@ -44,6 +44,8 @@ MEMORY:
 90 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
 */
 
+#define MAX_MEMORY 100
+
 class Simp {
 public:
 	Simp();
@@ -58,7 +60,7 @@ public:
 	void runSystem();
 
 private:
-	int memory[100];
+	int memory[MAX_MEMORY];
 	int accumulator;
 	int instructionCounter;
 	int operationCode;

@@ -2,7 +2,7 @@
 
 Simp::Simp() {
 	// initialize every element in memory to 0
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < MAX_MEMORY; i++) {
 		memory[i] = 0;	
 	}
 
@@ -44,7 +44,7 @@ void Simp::promptUser(int& memloc, int& currRegister) {
 /*after program finishes: displays memory and registers*/
 void Simp::dataDump() {
 	cout << "Memory Dump: " << endl;
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < MAX_MEMORY; i++) {
 		cout << i << " " << memory[i] << endl;
 	}
 }
