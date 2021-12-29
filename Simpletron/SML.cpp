@@ -34,13 +34,10 @@ const int& Simp::getCurrRegister() const {
 }
 
 /*prompts user for "word" to be placed and loads into memory*/
-/*
-memloc == instructionCounter
-*/
-void Simp::promptUser(int& memloc) {
-	cout << memloc << " ? ";
-	cin >> memory[memloc];
-	memloc++;
+void Simp::promptUser() {
+	cout << instructionCounter << " ? ";
+	cin >> memory[instructionCounter];
+	instructionCounter++;
 }
 
 /*after program finishes: displays memory and registers*/
@@ -55,8 +52,8 @@ void Simp::dataDump() {
 void Simp::runSystem() {
 	displayStart();
 
-	while (getCurrRegister() != -9999) {
-		promptUser(instructionCounter);
+	while (memory[instructionCounter - 1] != -9999) {
+		promptUser();
 	}
 	// execute program once user finishes inputting
 

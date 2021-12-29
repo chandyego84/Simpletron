@@ -54,8 +54,8 @@ public:
 	const int* getMemory() const;
 	const int& getCurrRegister() const;
 
-	void promptUser(int& memloc);
-	
+	void promptUser();
+	//void executeProgram();
 
 	void dataDump();
 	void runSystem();
