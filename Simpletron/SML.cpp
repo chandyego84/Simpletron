@@ -106,14 +106,21 @@ void Simp::executeProgram() {
 		}
 		instructionCounter++;
 	}
-	cout << "*** Program execution completed ***" << endl;
+	cout << "*** Program execution completed ***" << endl << endl;
 }
 
 /*after program finishes: displays memory and registers*/
 void Simp::dataDump() {
-	cout << "Memory Dump: " << endl;
+	cout << "*** Register and Memory Dump ***"<< endl;
+	cout << "REGISTERS:" << endl;
+	cout << "accumulator " << showpos << setw(5) << setfill('0') << internal << accumulator << endl;
+	cout << "instructionCounter " << noshowpos << setw(2) << setfill('0') << internal << instructionCounter << endl;
+	cout << "instructionRegister " << showpos << setw(5) << setfill('0') << internal << instructionRegister << endl;
+	cout << "operationCode " << noshowpos << setw(2) << setfill('0') << internal << operationCode << endl;
+	cout << "operand " << "" << setw(2) << setfill('0') << internal << operand << endl << endl;
+
 	for (int i = 0; i < MAX_MEMORY; i++) {
-		cout << i << " " << memory[i] << endl;
+		cout << noshowpos << i << " " << memory[i] << endl;
 	}
 }
 
@@ -128,7 +135,7 @@ void Simp::runSystem() {
 		promptUser(numInstructions, input);
 	}
 	cout << "*** Program loading completed ***" << endl;
-	cout << "*** Program execution begins ***" << endl;
+	cout << "*** Program execution begins ***" << endl << endl;
 	// execute program once user finishes inputting
 	executeProgram();
 

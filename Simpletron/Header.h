@@ -15,7 +15,10 @@ numerical value inserted into the stream
 */
 using std::showpos; // shows (+) signs
 using std::noshowpos; // disable display of (+) signs
-/*
+using std::setfill;
+using std::setw;
+using std::internal;
+					  /*
 for numbers w/ < 4 digits:
 * format numbers w/ leading zeros between the sign and the value
 * by using following statement before outputting the value:
