@@ -40,6 +40,16 @@ void Simp::promptUser() {
 	instructionCounter++;
 }
 
+/*executes instructions loaded into memory*/
+void Simp::executeProgram() {
+	for (int i = 0; i < instructionCounter; i++) {
+		// sets instruction variables
+		instructionRegister = memory[i];
+		operationCode = instructionRegister / 100;
+		operand = instructionRegister % 100;
+	}
+}
+
 /*after program finishes: displays memory and registers*/
 void Simp::dataDump() {
 	cout << "Memory Dump: " << endl;
