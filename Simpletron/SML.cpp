@@ -23,14 +23,17 @@ void Simp::displayStart() {
 	cout << "*** your program. ***" << endl;
 }
 
+/*returns x-word memory array*/
 const int* Simp::getMemory() const{
 	return memory;
 } 
 
+/*gets next instruction to be executed from the register*/
 const int& Simp::getCurrRegister() const {
 	return instructionRegister;
 }
 
+/*prompts user for "word" to be placed into memory and instruction register*/
 void Simp::promptUser(int& memloc, int& currRegister) {
 	cout << memloc << " ? ";
 	cin >> memory[memloc];
@@ -38,6 +41,7 @@ void Simp::promptUser(int& memloc, int& currRegister) {
 	memloc++;
 }
 
+/*after program finishes: displays memory and registers*/
 void Simp::dataDump() {
 	cout << "Memory Dump: " << endl;
 	for (int i = 0; i < 100; i++) {
@@ -45,6 +49,7 @@ void Simp::dataDump() {
 	}
 }
 
+/*runs SML*/
 void Simp::runSystem() {
 	displayStart();
 
