@@ -26,8 +26,12 @@ void Simp::displayStart() {
 /*prompts user for "word" to be placed and loads into memory*/
 /*counter: tracks current instruction location*/
 void Simp::promptUser(int &counter, int &input) {
-	cout << counter << " ? ";
-	cin >> input;
+	do {
+		cout << setw(2) << setfill('0') << internal << counter;
+		cout << " ? ";
+		cin >> input;
+	} while (input < -9999 || input > 9999); // 'word' input must be in range
+
 	if (input != -9999) {
 		// user keeps entering instructions
 		memory[counter] = input;
@@ -37,7 +41,7 @@ void Simp::promptUser(int &counter, int &input) {
 
 /*executes instructions loaded into memory*/
 void Simp::executeProgram() {
-	while (instructionCounter < MAX_MEMORY && memory[instructionCounter] != HALT) {
+	while (instructionCounter < MAX_MEMORY && operationCode != HALT) {
 		// sets instruction variables
 		instructionRegister = memory[instructionCounter];
 		operationCode = instructionRegister / 100;

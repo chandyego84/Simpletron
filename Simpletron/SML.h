@@ -42,6 +42,21 @@ MEMORY:
 70 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
 80 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
 90 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000 +0000
+--------------------------------------------------------------
+ERROR CHECKING
+--------------------------------------------------------------
+[x] Program loading phase: 
+	* each 'word', x, -9999 < x < +9999
+[x] Execution Phase: 
+	* divide by zero 
+	* invalid operation codes
+	* accumulator overflows (arithmetic ops. > +9999 or < -9999)
+	^^ Errors known as fatal errors
+
+Detecting an error:
+	- When fatal error is detected, display the corresponding error message.
+	- Abort execution.
+	- Display full register and memory dump to help user locate error in the program.
 */
 
 /*size of memory*/
