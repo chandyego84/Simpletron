@@ -23,16 +23,6 @@ void Simp::displayStart() {
 	cout << "*** your program. ***" << endl;
 }
 
-/*returns x-word memory array*/
-const int* Simp::getMemory() const{
-	return memory;
-} 
-
-/*gets next instruction to be executed from the register*/
-const int& Simp::getCurrRegister() const {
-	return instructionRegister;
-}
-
 /*prompts user for "word" to be placed and loads into memory*/
 /*counter: tracks current instruction location*/
 void Simp::promptUser(int &counter, int &input) {

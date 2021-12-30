@@ -66,9 +66,6 @@ public:
 	Simp();
 	void displayStart();
 
-	const int* getMemory() const;
-	const int& getCurrRegister() const;
-
 	void promptUser(int &counter, int &input);
 	void executeProgram();
 
