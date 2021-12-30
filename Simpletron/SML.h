@@ -48,6 +48,7 @@ ERROR CHECKING
 [x] Program loading phase: 
 	* each 'word', x, -9999 < x < +9999
 [x] Execution Phase: 
+	-FATAL ERRORS-
 	* divide by zero 
 	* invalid operation codes
 	* accumulator overflows (arithmetic ops. > +9999 or < -9999)
@@ -83,6 +84,7 @@ public:
 
 	void promptUser(int &counter, int &input);
 	void executeProgram();
+	void errorCheck();
 
 	void dataDump();
 	void runSystem();

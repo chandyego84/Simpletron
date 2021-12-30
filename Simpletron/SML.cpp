@@ -103,6 +103,23 @@ void Simp::executeProgram() {
 	cout << "*** Program execution completed ***" << endl << endl;
 }
 
+/*
+[x] Execution Phase:
+	* divide by zero
+	* invalid operation codes
+	* accumulator overflows (arithmetic ops. > +9999 or < -9999)
+	^^ Errors known as fatal errors
+
+Detecting an error:
+	- When fatal error is detected, display the corresponding error message.
+	- Abort execution.
+	- Display full register and memory dump to help user locate error in the program.
+
+*/
+void Simp::errorCheck() {
+	
+}
+
 /*after program finishes: displays memory and registers*/
 void Simp::dataDump() {
 	cout << "*** Register and Memory Dump ***"<< endl;
