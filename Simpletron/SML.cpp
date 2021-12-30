@@ -109,8 +109,23 @@ void Simp::dataDump() {
 	cout << "operationCode " << noshowpos << setw(2) << setfill('0') << internal << operationCode << endl;
 	cout << "operand " << "" << setw(2) << setfill('0') << internal << operand << endl << endl;
 
-	for (int i = 0; i < MAX_MEMORY; i++) {
-		cout << noshowpos << i << " " << memory[i] << endl;
+	for (int n = 0; n < MAX_MEMORY / 10; n++) {
+		// displays x column
+		cout << "     " << n;    //n is the element to print !
+	}
+	cout << endl;
+
+	int j = 0;
+	for (int i = 0; i < MAX_MEMORY / 10; i++) {
+		// displays y-column
+		cout << noshowpos << setw(2) << setfill(' ') << internal << 10 * i;
+		cout << " ";
+		for (j; j < (MAX_MEMORY / 10) + (10 * (i)) ; j++) {
+			// displays each memory element
+			cout << showpos << setw(5) << setfill ('0') << internal << memory[j];
+			cout << " ";
+		}
+		cout << endl;
 	}
 }
 
