@@ -42,6 +42,7 @@ void Simp::promptUser(int &counter, int &input) {
 /*executes instructions loaded into memory*/
 void Simp::executeProgram() {
 	while (instructionCounter < MAX_MEMORY && operationCode != HALT) {
+
 		// sets instruction variables
 		instructionRegister = memory[instructionCounter];
 		operationCode = instructionRegister / 100;
@@ -76,6 +77,9 @@ void Simp::executeProgram() {
 				break;
 
 			case DIVIDE:
+				if (memory[operand] == 0) {
+					throw "Divide by Zero Error";
+				}
 				accumulator /= memory[operand];
 				break;
 
@@ -103,25 +107,18 @@ void Simp::executeProgram() {
 				// not a valid operation code
 				throw "Invalid Operation Code found";
 			}
+		if (accumulator < -9999) {
+			throw "Accumulator Underflow";
 		}
+		else if (accumulator > 9999) {
+			throw "Accumulator Overflow";
+		}
+
 		instructionCounter++;
+		}
 
 	cout << "*** Program execution completed ***" << endl << endl;
 }
-
-/*
-[x] Execution Phase:
-	* divide by zero
-	* invalid operation codes
-	* accumulator overflows (arithmetic ops. > +9999 or < -9999)
-	^^ Errors known as fatal errors
-
-Detecting an error:
-	- When fatal error is detected, display the corresponding error message.
-	- Abort execution.
-	- Display full register and memory dump to help user locate error in the program.
-
-*/
 
 /*after program finishes: displays memory and registers*/
 void Simp::dataDump() {
@@ -157,7 +154,6 @@ void Simp::dataDump() {
 void Simp::runSystem() {
 	int numInstructions = 0;
 	int input = 0;
-	bool success = false;
 
 	displayStart();
 
@@ -172,7 +168,7 @@ void Simp::runSystem() {
 		executeProgram();
 	}
 	catch (const char* errMsg) {
-		cout << "*** Program abnormally terminated ***" << endl;
+		cout << endl << "*** Program abnormally terminated ***" << endl;
 		cout << "*** " << errMsg << " ***" << endl << endl;
 	}
 	// dump all data after execution completes
