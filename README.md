@@ -41,3 +41,24 @@ const int branchneg{41}; Branch to a specific location in memory if the accumula
 const int branchzero{42}; Branch to a specific location in memory if the accumulator is zero.
 
 const int halt{43}; Halt--the program has completed its task.
+
+## SML Extensions
+- [ ] Extend the Simpletron Simulator’s memory to contain 1000 memory locations to enable the Simpletron to handle larger programs.
+- [ ] Allow the simulator to perform remainder calculations. This requires an additional Simpletron Machine Language instruction.
+- [ ] Allow the simulator to perform exponentiation calculations. This requires an additional Simpletron Machine Language instruction.
+- [ ] Modify the simulator to use hexadecimal values rather than integer values to represent Simpletron Machine Language instructions. 
+- [ ] Modify the simulator to allow output of a newline. This requires an additional Simpletron Machine Language instruction. 
+- [ ] Modify the simulator to process floating-point values in addition to integer values.
+- [ ] Modify the simulator to handle string input. [Each Simpletron word can be divided into two groups,each holding a two-digit integer. Each two-digit integer represents the ASCII decimal equivalent of a character. Add a machine-language instruction
+that inputs a string and store the string beginning at a specific Simpletron memory location. The first half of the word at that location will be a count of the number of characters in the string (i.e., the length of the string). Each succeeding half-word contains
+one ASCII character expressed as two decimal digits. The machine-language instruction
+converts each character into its ASCII equivalent and assigns it to a half-word.]
+- [ ] Modify the simulator to handle output of strings stored in the format of task above. 
+[Add a machine-language instruction that will display a string beginning at a certain
+Simpletron memory location. The first half of the word at that location is a count of the
+number of characters in the string (i.e., the length of the string). Each succeeding halfword contains one ASCII character expressed as two decimal digits. The machine-language instruction checks the length and displays the string by translating each two-digit
+number into its equivalent character.]
+- [ ] Modify the simulator to include instruction SML_DEBUG that displays a memory dump
+after each instruction executes. Give SML_DEBUG an operation code of 44. The word
++4401 turns on debug mode, and +4400 turns off debug mode.
+

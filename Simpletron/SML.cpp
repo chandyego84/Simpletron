@@ -168,7 +168,7 @@ void Simp::runSystem() {
 		executeProgram();
 	}
 	catch (const char* errMsg) {
-		cout << endl << "*** Program abnormally terminated ***" << endl;
+		cout << "*** Program abnormally terminated ***" << endl;
 		cout << "*** " << errMsg << " ***" << endl << endl;
 	}
 	// dump all data after execution completes
