@@ -64,6 +64,7 @@ Detecting an error:
 #define MAX_MEMORY 100
 
 /*operation codes*/
+#define EMPTY 00
 #define READ 10
 #define WRITE 11
 #define LOAD 20
@@ -84,7 +85,6 @@ public:
 
 	void promptUser(int &counter, int &input);
 	void executeProgram();
-	void errorCheck();
 
 	void dataDump();
 	void runSystem();

@@ -48,58 +48,64 @@ void Simp::executeProgram() {
 		operand = instructionRegister % 100;
 
 		switch (operationCode) {
-		case READ: 
-			cin >> memory[operand];
-			break;
+			case EMPTY:
+				break;
 
-		case WRITE:
-			cout << memory[operand] << endl;
-			break;
+			case READ:
+				cin >> memory[operand];
+				break;
 
-		case LOAD:
-			accumulator = memory[operand];
-			break;
+			case WRITE:
+				cout << memory[operand] << endl;
+				break;
 
-		case STORE:
-			memory[operand] = accumulator;
-			break;
+			case LOAD:
+				accumulator = memory[operand];
+				break;
 
-		case ADD:
-			accumulator += memory[operand];
-			break;
+			case STORE:
+				memory[operand] = accumulator;
+				break;
 
-		case SUBTRACT:
-			accumulator -= memory[operand];
-			break;
+			case ADD:
+				accumulator += memory[operand];
+				break;
 
-		case DIVIDE:
-			accumulator /= memory[operand];
-			break;
+			case SUBTRACT:
+				accumulator -= memory[operand];
+				break;
 
-		case MULTIPLY:
-			accumulator *= memory[operand];
-			break;
+			case DIVIDE:
+				accumulator /= memory[operand];
+				break;
 
-		case BRANCH:
-			instructionCounter = operand - 1;
-			break;
+			case MULTIPLY:
+				accumulator *= memory[operand];
+				break;
 
-		case BRANCHNEG:
-			if (accumulator < 0) {
+			case BRANCH:
 				instructionCounter = operand - 1;
-			}
-			break;
+				break;
 
-		case BRANCHZERO:
-			if (accumulator == 0) {
-				instructionCounter = operand - 1;
-			}
-			break;
+			case BRANCHNEG:
+				if (accumulator < 0) {
+					instructionCounter = operand - 1;
+				}
+				break;
 
-		default: 00;
+			case BRANCHZERO:
+				if (accumulator == 0) {
+					instructionCounter = operand - 1;
+				}
+				break;
+
+			default:
+				// not a valid operation code
+				throw "Invalid Operation Code found";
+			}
 		}
 		instructionCounter++;
-	}
+
 	cout << "*** Program execution completed ***" << endl << endl;
 }
 
@@ -116,9 +122,6 @@ Detecting an error:
 	- Display full register and memory dump to help user locate error in the program.
 
 */
-void Simp::errorCheck() {
-	
-}
 
 /*after program finishes: displays memory and registers*/
 void Simp::dataDump() {
@@ -154,16 +157,24 @@ void Simp::dataDump() {
 void Simp::runSystem() {
 	int numInstructions = 0;
 	int input = 0;
+	bool success = false;
 
 	displayStart();
 
 	while (input != -9999) {
-		promptUser(numInstructions, input);
+		promptUser(numInstructions, input);	
 	}
+
 	cout << "*** Program loading completed ***" << endl;
 	cout << "*** Program execution begins ***" << endl << endl;
 	// execute program once user finishes inputting
-	executeProgram();
-
+	try {
+		executeProgram();
+	}
+	catch (const char* errMsg) {
+		cout << "*** Program abnormally terminated ***" << endl;
+		cout << "*** " << errMsg << " ***" << endl << endl;
+	}
+	// dump all data after execution completes
 	dataDump();
 }
