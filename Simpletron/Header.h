@@ -2,11 +2,13 @@
 
 #include <iostream> // cout, endl
 #include <iomanip> // setfill, setw
+#include <cmath>
 #include <fstream>
 
 using std::cin;
 using std::cout;
 using std::endl;
+using std::pow;
 
 /*
 sets the showpos format flag for the str stream
@@ -18,7 +20,7 @@ using std::noshowpos; // disable display of (+) signs
 using std::setfill;
 using std::setw;
 using std::internal;
-					  /*
+/*
 for numbers w/ < 4 digits:
 * format numbers w/ leading zeros between the sign and the value
 * by using following statement before outputting the value:

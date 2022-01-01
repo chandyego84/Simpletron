@@ -83,6 +83,13 @@ void Simp::executeProgram() {
 				accumulator *= memory[operand];
 				break;
 
+			case MODULO:
+				accumulator %= memory[operand];
+				break;
+
+			case EXPONENT:
+				accumulator = pow(float(accumulator), float(memory[operand]));
+
 			case BRANCH:
 				instructionCounter = operand - 1;
 				break;

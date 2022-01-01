@@ -44,8 +44,8 @@ const int halt{43}; Halt--the program has completed its task.
 
 ## SML Extensions
 - [x] Extend the Simpletron Simulator’s memory to contain 1000 memory locations to enable the Simpletron to handle larger programs.
-- [ ] Allow the simulator to perform remainder calculations. This requires an additional Simpletron Machine Language instruction.
-- [ ] Allow the simulator to perform exponentiation calculations. This requires an additional Simpletron Machine Language instruction.
+- [x] Allow the simulator to perform remainder calculations. This requires an additional Simpletron Machine Language instruction.
+- [x] Allow the simulator to perform exponentiation calculations. This requires an additional Simpletron Machine Language instruction.
 - [ ] Modify the simulator to use hexadecimal values rather than integer values to represent Simpletron Machine Language instructions. 
 - [ ] Modify the simulator to allow output of a newline. This requires an additional Simpletron Machine Language instruction. 
 - [ ] Modify the simulator to process floating-point values in addition to integer values.

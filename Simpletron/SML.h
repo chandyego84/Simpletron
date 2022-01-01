@@ -73,6 +73,8 @@ Detecting an error:
 #define SUBTRACT 31
 #define DIVIDE 32
 #define MULTIPLY 33
+#define MODULO 34
+#define EXPONENT 35
 #define BRANCH 40
 #define BRANCHNEG 41
 #define BRANCHZERO 42
