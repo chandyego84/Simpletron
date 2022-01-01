@@ -1,11 +1,6 @@
 #include "SML.h"
 
 Simp::Simp() {
-	// initialize every element in memory to 0
-	for (int i = 0; i < MAX_MEMORY; i++) {
-		memory[i] = 0;	
-	}
-
 	accumulator = 0;
 	instructionCounter = 0;
 	operationCode = 0;
@@ -53,6 +48,7 @@ void Simp::executeProgram() {
 				break;
 
 			case READ:
+				cout << "*Reading to memory location " << operand << "*" << endl;
 				cin >> memory[operand];
 				break;
 
@@ -130,7 +126,7 @@ void Simp::dataDump() {
 	cout << "operationCode " << noshowpos << setw(2) << setfill('0') << internal << operationCode << endl;
 	cout << "operand " << "" << setw(2) << setfill('0') << internal << operand << endl << endl;
 
-	for (int n = 0; n < MAX_MEMORY / 10; n++) {
+	for (int n = 0; n < 10; n++) {
 		// displays x column
 		cout << "     " << n;    //n is the element to print !
 	}
@@ -141,7 +137,7 @@ void Simp::dataDump() {
 		// displays y-column
 		cout << noshowpos << setw(2) << setfill(' ') << internal << 10 * i;
 		cout << " ";
-		for (j; j < (MAX_MEMORY / 10) + (10 * (i)) ; j++) {
+		for (j; j < (MAX_MEMORY / (MAX_MEMORY / 10) + (10 * (i))); j++) {
 			// displays each memory element
 			cout << showpos << setw(5) << setfill ('0') << internal << memory[j];
 			cout << " ";
@@ -161,7 +157,7 @@ void Simp::runSystem() {
 		promptUser(numInstructions, input);	
 	}
 
-	cout << "*** Program loading completed ***" << endl;
+	cout << endl << "*** Program loading completed ***" << endl;
 	cout << "*** Program execution begins ***" << endl << endl;
 	// execute program once user finishes inputting
 	try {

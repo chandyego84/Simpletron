@@ -43,7 +43,7 @@ const int branchzero{42}; Branch to a specific location in memory if the accumul
 const int halt{43}; Halt--the program has completed its task.
 
 ## SML Extensions
-- [ ] Extend the Simpletron Simulator’s memory to contain 1000 memory locations to enable the Simpletron to handle larger programs.
+- [x] Extend the Simpletron Simulator’s memory to contain 1000 memory locations to enable the Simpletron to handle larger programs.
 - [ ] Allow the simulator to perform remainder calculations. This requires an additional Simpletron Machine Language instruction.
 - [ ] Allow the simulator to perform exponentiation calculations. This requires an additional Simpletron Machine Language instruction.
 - [ ] Modify the simulator to use hexadecimal values rather than integer values to represent Simpletron Machine Language instructions. 

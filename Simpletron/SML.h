@@ -61,7 +61,7 @@ Detecting an error:
 */
 
 /*size of memory*/
-#define MAX_MEMORY 100
+#define MAX_MEMORY 1000
 
 /*operation codes*/
 #define EMPTY 00
@@ -90,7 +90,7 @@ public:
 	void runSystem();
 
 private:
-	int memory[MAX_MEMORY];
+	int memory[MAX_MEMORY] = {0};
 	int accumulator;
 	int instructionCounter;
 	int operationCode;
