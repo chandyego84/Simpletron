@@ -47,7 +47,7 @@ const int halt{43}; Halt--the program has completed its task.
 - [x] Allow the simulator to perform remainder calculations. This requires an additional Simpletron Machine Language instruction.
 - [x] Allow the simulator to perform exponentiation calculations. This requires an additional Simpletron Machine Language instruction.
 - [ ] Modify the simulator to use hexadecimal values rather than integer values to represent Simpletron Machine Language instructions. 
-- [ ] Modify the simulator to allow output of a newline. This requires an additional Simpletron Machine Language instruction. 
+- [x] Modify the simulator to allow output of a newline. This requires an additional Simpletron Machine Language instruction. 
 - [ ] Modify the simulator to process floating-point values in addition to integer values.
 - [ ] Modify the simulator to handle string input. [Each Simpletron word can be divided into two groups,each holding a two-digit integer. Each two-digit integer represents the ASCII decimal equivalent of a character. Add a machine-language instruction
 that inputs a string and store the string beginning at a specific Simpletron memory location. The first half of the word at that location will be a count of the number of characters in the string (i.e., the length of the string). Each succeeding half-word contains

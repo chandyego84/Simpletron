@@ -79,6 +79,7 @@ Detecting an error:
 #define BRANCHNEG 41
 #define BRANCHZERO 42
 #define HALT 43
+#define NEWLINE 50
 
 class Simp {
 public:
