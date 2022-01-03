@@ -110,6 +110,10 @@ void Simp::executeProgram() {
 				cout << endl;
 				break;
 
+			case STRING_IN:
+				// handling string input
+
+
 			default:
 				// not a valid operation code
 				throw "Invalid Operation Code found";

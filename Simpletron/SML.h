@@ -60,8 +60,9 @@ Detecting an error:
 	- Display full register and memory dump to help user locate error in the program.
 */
 
-/*size of memory*/
-#define MAX_MEMORY 1000
+#define MAX_MEMORY 1000 // size of memory
+#define BLOCK_SIZE 1 // additional size for reallocating memory
+
 
 /*operation codes*/
 #define EMPTY 00
@@ -80,6 +81,7 @@ Detecting an error:
 #define BRANCHZERO 42
 #define HALT 43
 #define NEWLINE 50
+#define STRING_IN 51
 
 class Simp {
 public:

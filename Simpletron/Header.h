@@ -2,6 +2,7 @@
 
 #include <iostream> // cout, endl
 #include <iomanip> // setfill, setw
+#include <string>
 #include <cmath>
 #include <fstream>
 
