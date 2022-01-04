@@ -5,8 +5,7 @@ PARAM: user string input*/
 char* dyn_strIn();
 
 int main(int argc, char** argv) {
-
-    char* dyStr = dynamicCharString();
+    char* dyStr = dyn_strIn();
     cout << dyStr << endl;
 
 	/*Simp SML;
@@ -16,22 +15,24 @@ int main(int argc, char** argv) {
 	return 0;
 }
 
-char* dyn_strin() {
-    char* line = NULL, * tmp = NULL;
+char* dyn_strIn() {
+    char* line = nullptr, * tmp = nullptr;
     size_t size = 0, index = 0;
-    int ch = EOF;
+    char ch = NULL;
 
-    while (ch) {
+    do {
         ch = getc(stdin);
-
-        if (ch == EOF || ch == '\n')
-            // stop getting from input
-            ch = 0;
+        //if (ch == EOF || ch == '\n')
+        //    // stop getting from input
+        //    ch = 0;
+        if (ch == '\n') {
+            ch = '\0';
+        }
 
         if (size <= index) {
             // check if need to expand
             size += BLOCK_SIZE;
-            tmp = (char*)realloc(line, size);
+            tmp = (char*)realloc(line, size * 2); // assign line to temp in case line returns nullptr
             if (!tmp) {
                 free(line);
                 line = NULL;
@@ -40,7 +41,8 @@ char* dyn_strin() {
             line = tmp;
         }
         line[index++] = ch;
-    }
+        
+    } while (ch != '\0');
 
     return line;
 }

@@ -61,7 +61,7 @@ Detecting an error:
 */
 
 #define MAX_MEMORY 1000 // size of memory
-#define BLOCK_SIZE 1 // additional size for reallocating memory
+#define BLOCK_SIZE 4 // additional size for reallocating memory
 
 
 /*operation codes*/
