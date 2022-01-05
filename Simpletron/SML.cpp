@@ -112,7 +112,20 @@ void Simp::executeProgram() {
 
 			case STRING_IN:
 				// handling string input
+				// stores each string beginning @ specified location
+				{
+					string strIn;
+					cout << "Input string: ";
+					cin >> strIn;
 
+					size_t strSize = strIn.length();
+					int i = 0;
+					for (int loc = operand; loc < strSize + operand; loc++) {
+						memory[loc] = (int)strIn[i];
+						i++;
+					}
+				}
+				break;
 
 			default:
 				// not a valid operation code
@@ -184,4 +197,34 @@ void Simp::runSystem() {
 	}
 	// dump all data after execution completes
 	dataDump();
+}
+
+/*WILL USE <STRING> INSTEAD*/
+char* dyn_strIn() {
+	char* line = nullptr, * tmp = nullptr;
+	size_t size = 0, index = 0;
+	char ch = NULL;
+
+	do {
+		ch = getc(stdin);
+		if (ch == '\n') {
+			ch = '\0';
+		}
+
+		if (size <= index) {
+			// check if need to expand
+			size += BLOCK_SIZE;
+			tmp = (char*)realloc(line, size * 2); // assign line to temp in case line returns nullptr
+			if (!tmp) {
+				free(line);
+				line = NULL;
+				break;
+			}
+			line = tmp;
+		}
+		line[index++] = ch;
+
+	} while (ch != '\0');
+
+	return line;
 }

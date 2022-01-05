@@ -63,7 +63,6 @@ Detecting an error:
 #define MAX_MEMORY 1000 // size of memory
 #define BLOCK_SIZE 4 // additional size for reallocating memory
 
-
 /*operation codes*/
 #define EMPTY 00
 #define READ 10
@@ -81,7 +80,12 @@ Detecting an error:
 #define BRANCHZERO 42
 #define HALT 43
 #define NEWLINE 50
-#define STRING_IN 51
+#define STRING_IN 51 // lowest 3 digits = ASCII decimal value
+
+/*dynamically allocates/reallocates memory depending on size of
+WILL USE <STRING> INSTEAD
+*/
+char* dyn_strIn();
 
 class Simp {
 public:
@@ -101,4 +105,4 @@ private:
 	int operationCode;
 	int operand;
 	int instructionRegister;
-};
+}; 

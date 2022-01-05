@@ -2,8 +2,8 @@
 
 #include <iostream> // cout, endl
 #include <iomanip> // setfill, setw
-#include <string>
 #include <cmath>
+#include <string>
 #include <fstream>
 
 using std::cin;
@@ -31,4 +31,5 @@ for numbers w/ < 4 digits:
 * field width of fivve characters but does not have four digits (one position reserved for sign)
 */
 
+using std::string;
 using std::fstream;
