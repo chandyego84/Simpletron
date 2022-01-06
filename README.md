@@ -58,7 +58,7 @@ converts each character into its ASCII equivalent and assigns it to a half-word.
 Simpletron memory location. The first half of the word at that location is a count of the
 number of characters in the string (i.e., the length of the string). Each succeeding halfword contains one ASCII character expressed as two decimal digits. The machine-language instruction checks the length and displays the string by translating each two-digit
 number into its equivalent character.]
-- [ ] Modify the simulator to include instruction SML_DEBUG that displays a memory dump
+- [x] Modify the simulator to include instruction SML_DEBUG that displays a memory dump
 after each instruction executes. Give SML_DEBUG an operation code of 44. The word
 +4401 turns on debug mode, and +4400 turns off debug mode.
 
