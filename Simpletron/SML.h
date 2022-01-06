@@ -79,6 +79,7 @@ Detecting an error:
 #define BRANCHNEG 41
 #define BRANCHZERO 42
 #define HALT 43
+#define SML_DEBUG 44
 #define NEWLINE 50
 #define STRING_IN 51
 #define STRING_OUT 52
@@ -106,4 +107,5 @@ private:
 	int operationCode;
 	int operand;
 	int instructionRegister;
+	bool debugMode;
 }; 

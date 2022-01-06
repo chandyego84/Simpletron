@@ -6,6 +6,7 @@ Simp::Simp() {
 	operationCode = 0;
 	operand = 0;
 	instructionRegister = 0;
+	debugMode = false;
 }
 
 void Simp::displayStart() {
@@ -48,6 +49,16 @@ void Simp::executeProgram() {
 				break;
 			
 			case HALT:
+				debugMode = false; // redundant memory dump if true
+				break;
+
+			case SML_DEBUG:
+				if (operand == 01) {
+					debugMode = true;
+				}
+				else if (operand == 00) {
+					debugMode = false;
+				}
 				break;
 
 			case READ:
@@ -150,6 +161,9 @@ void Simp::executeProgram() {
 				// not a valid operation code
 				throw "Invalid Operation Code found";
 			}
+		if (debugMode) {
+			dataDump();
+		}
 		if (accumulator < -9999) {
 			throw "Accumulator Underflow";
 		}
@@ -191,6 +205,7 @@ void Simp::dataDump() {
 		}
 		cout << endl;
 	}
+	cout << endl;
 }
 
 /*runs SML*/
