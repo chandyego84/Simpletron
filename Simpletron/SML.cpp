@@ -115,12 +115,14 @@ void Simp::executeProgram() {
 				// stores each string beginning @ specified location
 				{
 					string strIn;
+					int loc = operand;
 					cout << "Input string: ";
 					cin >> strIn;
 
 					size_t strSize = strIn.length();
+					memory[loc - 1] = strSize; // store size of string
 					int i = 0;
-					for (int loc = operand; loc < strSize + operand; loc++) {
+					for (loc; loc < strSize + operand; loc++) {
 						memory[loc] = (int)strIn[i];
 						i++;
 					}

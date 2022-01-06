@@ -80,7 +80,8 @@ Detecting an error:
 #define BRANCHZERO 42
 #define HALT 43
 #define NEWLINE 50
-#define STRING_IN 51 // lowest 3 digits = ASCII decimal value
+#define STRING_IN 51
+#define STRING_OUT 52
 
 /*dynamically allocates/reallocates memory depending on size of
 WILL USE <STRING> INSTEAD
