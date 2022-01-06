@@ -46,6 +46,9 @@ void Simp::executeProgram() {
 		switch (operationCode) {
 			case EMPTY:
 				break;
+			
+			case HALT:
+				break;
 
 			case READ:
 				cout << "*Reading to memory location " << operand << "*" << endl;
@@ -112,7 +115,7 @@ void Simp::executeProgram() {
 
 			case STRING_IN:
 				// handling string input
-				// stores each string beginning @ specified location
+				// stores each string beginning @ specified mem location
 				{
 					string strIn;
 					int loc = operand;
@@ -126,6 +129,20 @@ void Simp::executeProgram() {
 						memory[loc] = (int)strIn[i];
 						i++;
 					}
+				}
+				break;
+
+			case STRING_OUT:
+				// handles outputting string starting from specific mem location
+				{
+					int loc = operand;
+					int strSize = memory[loc - 1];
+					
+					cout << "Output string: ";
+					for (int i = loc; i < strSize + loc; i++) {
+						cout << (char)memory[i];
+					}
+					cout << endl;
 				}
 				break;
 
