@@ -53,7 +53,7 @@ const int halt{43}; Halt--the program has completed its task.
 that inputs a string and store the string beginning at a specific Simpletron memory location. The first half of the word at that location will be a count of the number of characters in the string (i.e., the length of the string). Each succeeding half-word contains
 one ASCII character expressed as two decimal digits. The machine-language instruction
 converts each character into its ASCII equivalent and assigns it to a half-word.]
-- [ ] Modify the simulator to handle output of strings stored in the format of task above. 
+- [x] Modify the simulator to handle output of strings stored in the format of task above. 
 [Add a machine-language instruction that will display a string beginning at a certain
 Simpletron memory location. The first half of the word at that location is a count of the
 number of characters in the string (i.e., the length of the string). Each succeeding halfword contains one ASCII character expressed as two decimal digits. The machine-language instruction checks the length and displays the string by translating each two-digit
